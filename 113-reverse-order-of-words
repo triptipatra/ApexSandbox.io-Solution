@@ -1,0 +1,17 @@
+public String reverseWordsInASentence(String sentence){
+    //your flawless code here
+    if(sentence == null ){
+        return null;
+    }
+    List<String> newSen = sentence.split(' ');
+    string reverseStr ='';
+    for(Integer i = newSen.size()-1; i>=0; i--){
+        if(reverseStr == ''){
+            reverseStr += newSen[i];
+        }
+        else{
+            reverseStr += ' '+newSen[i];
+        }
+    }
+    return reverseStr;
+}
