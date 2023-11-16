@@ -1,0 +1,63 @@
+public boolean isSorted(List<Integer> numbers) {
+    //code here
+    Integer left = 0;
+    Integer right = numbers.size() -1;
+
+    if(numbers.size() < 3) return true;
+    if(numbers[left] < numbers[right]){
+        while(left < right){
+            //check acsending
+            if(numbers[left + 1] < numbers[left]){
+                return false;
+            }
+            left++;
+        }
+    }
+    if(numbers[left] > numbers[right]){
+        while(left < right){
+            //check desending
+            if(numbers[left + 1] > numbers[left]){
+                return false;
+            }
+            left++;
+        }
+    }
+    if(numbers[left] == numbers[right]){
+        while(left < right){
+            //check desending
+            if(numbers[left + 1] != numbers[left]){
+                return false;
+            }
+            left++;
+        }
+    }
+    return true;
+}
+
+/*
+if(numbers.size() < 3) return True;
+
+    for(Integer i =1; i < numbers.size(); i++){
+        if(numbers[i] != numbers[i-1]){
+            //find first two element is sorted or not
+            if(numbers[i-1] > numbers[i]){
+            //the two numbers are sorted descending
+            //return false if any subsequent element is sorted ascending
+                i++;
+                for(; i< numbers.size(); i++){
+                    if(numbers[i-1] < numbers[i]){
+                        return false;
+                    }
+                }
+            }else{
+                i++;
+                for(; i< numbers.size(); i++){
+                    if(numbers[i-1] > numbers[i]){
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    return true;
+    */
