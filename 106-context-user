@@ -1,0 +1,14 @@
+public Map<String,String> getContextUserInformation(){
+    //code here
+    String userName = UserInfo.getUserName();
+    String profileId = UserInfo.getProfileId();
+    String emailAddress = UserInfo.getUserEmail();
+    String userType = UserInfo.getUserType();
+    Map<String, String> userMap = new Map<String, String>();
+    userMap.put('UserName',userName);
+    userMap.put('ProfileId',profileId);
+    userMap.put('EmailId',emailAddress);
+    userMap.put('Type',userType);
+    return userMap;
+
+}
