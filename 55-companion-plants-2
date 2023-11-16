@@ -1,0 +1,24 @@
+public Boolean companionPlants(List<String> plants) {
+    //code here
+    Map<String, Set<String>> companionPlants  = new Map<String, Set<String>>();
+    companionPlants.put('lettuce', new Set<String>{'cucumbers, onions'});
+    companionPlants.put('cucumbers', new Set<String>{'lettuce'});
+    companionPlants.put('onions', new Set<String>{'lettuce, carrots, tomatoes'});
+    companionPlants.put('carrots', new Set<String>{'onions'});
+    companionPlants.put('tomatoes', new Set<String>{'onions'});
+
+    if(plants.size() == 1){
+            return false;
+        }
+    if (plants.size() == 0) {
+        return true;
+    }
+        //create a map for contant time retreival  and avoid conditionals 
+    
+    for(Integer i = 0; i < plants.size() -1; i++){
+        if (!companionPlants.get(plants[i]).contains(plants[i + 1])) {
+            return false;
+        }
+    }
+    return true;
+}
