@@ -1,0 +1,21 @@
+public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> contacts)
+{
+    // code here
+   List<sObject> mysObjectList = NEW LIST<sObject>();
+    
+    //check the accounts list and add it if it passes
+    if (accounts?.size() != null  && !accounts.isEmpty()){
+        for (Account a : accounts) {mysObjectList.add(a);}
+    }
+    //check the contacts list and add it if it passes
+    if (contacts?.size() != null && !contacts.isEmpty()){
+        for (Contact c : contacts ) {mysObjectList.add(c);}
+    }
+    return mysObjectList;
+
+}
+
+
+
+//create the empty list to return later
+    
