@@ -1,0 +1,19 @@
+public void validateInsert(List<Opportunity> opportunities){
+
+    //code here
+
+    String errMesg = 'Description should not be empty for Closed Won opportunity.';
+
+    for(Opportunity oppRec: opportunities){
+
+        if((oppRec.StageName == 'Closed Won') && 
+
+            (oppRec.Description == '' || oppRec.Description == null)){
+
+               oppRec.Description.addError(errMesg);
+
+            }
+
+    }
+
+}
